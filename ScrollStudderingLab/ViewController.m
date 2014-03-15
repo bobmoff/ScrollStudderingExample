@@ -8,24 +8,41 @@
 
 #import "ViewController.h"
 #import "MyScene.h"
+#import "ScrollViewDelegate.h"
 
-@implementation ViewController
+@implementation ViewController {
+    SKView *skView;
+    MyScene *scene;
+    ScrollViewDelegate *delegate;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
+    skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    skView.asynchronous = NO;
+    skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
     [skView presentScene:scene];
+    
+    delegate = [ScrollViewDelegate new];
+    delegate.scene = scene;
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    scrollView.delegate = delegate;
+    scrollView.contentSize = CGSizeMake(2000, 2000);
+//    scrollView.delaysContentTouches = NO;
+    [skView addSubview:scrollView];
+    [skView addGestureRecognizer:scrollView.panGestureRecognizer];
 }
 
 - (BOOL)shouldAutorotate

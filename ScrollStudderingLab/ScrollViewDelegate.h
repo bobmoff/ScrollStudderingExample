@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MyScene.h"
 
-@interface ScrollViewDelegate : NSObject
+@interface ScrollViewDelegate : NSObject<UIScrollViewDelegate>
+
+@property (nonatomic) MyScene *scene;
 
 @end

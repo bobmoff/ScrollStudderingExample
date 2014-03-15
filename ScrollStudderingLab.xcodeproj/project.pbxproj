@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		692D44CF18ACC6DA00A0A345 /* ScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 692D44CE18ACC6DA00A0A345 /* ScrollViewDelegate.m */; };
 		6992536418AC2941001060B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6992536318AC2941001060B0 /* Foundation.framework */; };
 		6992536618AC2941001060B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6992536518AC2941001060B0 /* CoreGraphics.framework */; };
 		6992536818AC2941001060B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6992536718AC2941001060B0 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		692D44CD18ACC6DA00A0A345 /* ScrollViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewDelegate.h; sourceTree = "<group>"; };
+		692D44CE18ACC6DA00A0A345 /* ScrollViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewDelegate.m; sourceTree = "<group>"; };
 		6992536018AC2941001060B0 /* ScrollStudderingLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollStudderingLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6992536318AC2941001060B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6992536518AC2941001060B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 				6992538018AC2941001060B0 /* Spaceship.png */,
 				6992538218AC2941001060B0 /* Images.xcassets */,
 				6992536C18AC2941001060B0 /* Supporting Files */,
+				692D44CD18ACC6DA00A0A345 /* ScrollViewDelegate.h */,
+				692D44CE18ACC6DA00A0A345 /* ScrollViewDelegate.m */,
 			);
 			path = ScrollStudderingLab;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 			files = (
 				6992537F18AC2941001060B0 /* MyScene.m in Sources */,
 				6992537C18AC2941001060B0 /* ViewController.m in Sources */,
+				692D44CF18ACC6DA00A0A345 /* ScrollViewDelegate.m in Sources */,
 				6992537618AC2941001060B0 /* AppDelegate.m in Sources */,
 				6992537218AC2941001060B0 /* main.m in Sources */,
 			);
@@ -476,6 +482,7 @@
 				6992539B18AC2941001060B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6992539C18AC2941001060B0 /* Build configuration list for PBXNativeTarget "ScrollStudderingLabTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +491,7 @@
 				6992539E18AC2941001060B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
