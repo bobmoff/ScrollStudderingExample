@@ -47,11 +47,11 @@
 //    }
 //}
 //
--(void)update:(CFTimeInterval)currentTime
-{
-    CGFloat y = ((IIAppDelegate *)[UIApplication sharedApplication].delegate).y;
-//    NSLog(@"y: %f", y);
-    self.myLabel.position = CGPointMake(self.myLabel.position.x, y);
-}
+//-(void)update:(CFTimeInterval)currentTime
+//{
+//    CGFloat y = ((IIAppDelegate *)[UIApplication sharedApplication].delegate).y;
+////    NSLog(@"y: %f", y);
+//    self.myLabel.position = CGPointMake(self.myLabel.position.x, y);
+//}
 
 @end

@@ -46,9 +46,9 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 //    dispatch_async( dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0 ), ^{
-//        self.scene.myLabel.position = CGPointMake(self.scene.myLabel.position.x, scrollView.contentOffset.y);
+        self.scene.myLabel.position = CGPointMake(self.scene.myLabel.position.x, scrollView.contentOffset.y);
 //    NSLog(@"scrollView.contentOffset.y: %f", scrollView.contentOffset.y);
-    ((IIAppDelegate *)[UIApplication sharedApplication].delegate).y = scrollView.contentOffset.y;
+//    ((IIAppDelegate *)[UIApplication sharedApplication].delegate).y = scrollView.contentOffset.y;
 //    });
 }
 
