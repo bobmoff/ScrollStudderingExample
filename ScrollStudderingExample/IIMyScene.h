@@ -10,4 +10,6 @@
 
 @interface IIMyScene : SKScene
 
+@property (nonatomic) SKLabelNode *myLabel;
+
 @end

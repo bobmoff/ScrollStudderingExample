@@ -8,6 +8,14 @@
 
 #import "IIViewController.h"
 #import "IIMyScene.h"
+#import "IIAppDelegate.h"
+
+@interface IIViewController ()
+
+@property (nonatomic) UIScrollView *scrollView;
+@property (nonatomic) IIMyScene *scene;
+
+@end
 
 @implementation IIViewController
 
@@ -16,36 +24,32 @@
     [super viewDidLoad];
 
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
+    SKView *skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    skView.asynchronous = NO;
     
     // Create and configure the scene.
-    SKScene * scene = [IIMyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    self.scene = [IIMyScene sceneWithSize:skView.bounds.size];
+    self.scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];
+    [skView presentScene:self.scene];
+    
+    // Add scroll view
+    self.scrollView = [[UIScrollView alloc] initWithFrame:skView.frame];
+    self.scrollView.delegate = self;
+    self.scrollView.contentSize = CGSizeMake(skView.frame.size.width, skView.frame.size.height * 2);
+    [skView addSubview:self.scrollView];
 }
 
-- (BOOL)shouldAutorotate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+//    dispatch_async( dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0 ), ^{
+        self.scene.myLabel.position = CGPointMake(self.scene.myLabel.position.x, scrollView.contentOffset.y);
+//    NSLog(@"scrollView.contentOffset.y: %f", scrollView.contentOffset.y);
+//    ((IIAppDelegate *)[UIApplication sharedApplication].delegate).y = scrollView.contentOffset.y;
+//    });
 }
 
 @end
